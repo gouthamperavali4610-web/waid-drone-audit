@@ -8,7 +8,7 @@ Built for: Windows/Linux laptop with an **RTX 4070**. Everything runs locally.
 
 ---
 
-## One-time setup (do this first)
+## One-time setup
 
 Open a terminal (Windows: PowerShell or Command Prompt) in this folder.
 
@@ -19,7 +19,7 @@ Keeps this project's packages separate from the rest of your computer.
 python -m venv venv
 ```
 
-Activate it (you must do this EVERY time you open a new terminal):
+Activate it:
 
 ```bash
 # Windows:
@@ -28,9 +28,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-You'll know it worked when your prompt starts with `(venv)`.
-
-### 2. Install PyTorch WITH GPU SUPPORT (important — do this BEFORE ultralytics)
+### 2. Install PyTorch WITH GPU SUPPORT
 
 This is the #1 thing beginners get wrong. Installing ultralytics first can pull
 a CPU-only PyTorch, which ignores your 4070 and trains ~50x slower.
@@ -69,18 +67,3 @@ re-do step 2 — don't continue, or you'll wait hours instead of minutes.
 | `5_experiments.py` | Altitude + occlusion degradation → writes `results/experiments.csv` | 10–30 min |
 | `6_plot_curves.py` | Turns the CSV into the envelope curve figures | seconds |
 
-You only run 2 and 3 **once**. After that, `4_identify.py` is the one you'll
-use over and over.
-
----
-
-## The short version
-
-```bash
-venv\Scripts\activate          # every new terminal
-python 2_prepare_waid.py       # once
-python 3_train.py              # once (~30 min)
-python 4_identify.py my_photos # as often as you like
-python 5_experiments.py        # once you want the research results
-python 6_plot_curves.py
-```
