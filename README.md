@@ -1,7 +1,6 @@
 # WAID Drone Audit — Model Pipeline
 
-Complete code for the vision side of the project: train a detector on WAID,
-identify animals in your own photos, run the altitude + occlusion degradation
+Train a detector on WAID,identify animals in your own photos, run the altitude + occlusion degradation
 experiments, and plot the envelope curves.
 
 Built for: Windows/Linux laptop with an **RTX 4070**. Everything runs locally.
